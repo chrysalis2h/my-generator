@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>欢迎页</title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/flow-designer/iconfont.css">
+    <link rel="stylesheet" type="text/css" href="assets/flow-designer/joint.css">
+    <style>
+        .model-package-chart,
+        .model-package-chart .paper-parent,
+        .model-package-chart .paper-parent .chart-paper .col-md-12,
+        .model-package-chart .paper-parent .chart-paper .portlet,
+        .model-package-chart .package-chart {
+            height: 100%
+        }
+
+        .model-package-chart .paper-parent .chart-paper .col-md-12 {
+            padding-bottom: 30px;
+        }
+
+        .model-package-chart .package-chart {
+            padding-bottom: 40px;
+        }
+
+        .model-package-chart .btn-group {
+            margin-bottom: 4px;
+        }
+
+        .model-package-chart .btn-group .btn-default {
+            height: 26px;
+            margin-right: 6px;
+            border-radius: 4px !important;
+            font-size: 12px;
+            padding: 4px 10px;
+        }
+
+        .model-package-chart .btn-group .btn-group-2 {
+            border-right: 4px double #cccccc;
+            margin-right: 6px;
+            float: left;
+        }
+
+        .model-package-chart .btn-group .btn-group-right {
+            float: left;
+        }
+
+        .model-package-chart .btn-group .btn-default:hover {
+            background-color: #fff;
+            border-color: #36c6d3;
+        }
+
+        .model-package-chart .btn-group .btn-active {
+            color: #36c6d3;
+            border-color: #36c6d3;
+        }
+    </style>
+</head>
+<body>
+<div id="flow-designer-chart" class="model-package-chart">
+    <div class="paper-parent">
+        <div class="chart-paper">
+            <div class="col-md-12">
+                <div class="portlet light bordered">
+                    <div class="portlet-body">
+                        <div class="btn-group">
+                            <div class="btn-group-2">
+                                <a class="btn btn-default select-btn chart-tool" data-trigger="hover"
+                                   data-placement="right" data-toggle="tooltip-chart" title="选择">
+                                    <i class="icon-font icon-select">&nbsp;&nbsp;选择</i>
+                                </a>
+                            </div>
+                            <div class="btn-group-2">
+                                <a class="btn btn-default add-btn chart-tool" data-trigger="hover"
+                                   data-placement="right" data-toggle="tooltip-chart" title="添加类">
+                                    <i class="icon-font icon-add">&nbsp;&nbsp;添加类</i>
+                                </a>
+                                <a class="btn btn-default quote-btn chart-tool" data-trigger="hover"
+                                   data-placement="right" data-toggle="tooltip-chart" title="添加引用">
+                                    <i class="icon-font icon-quote">&nbsp;&nbsp;添加引用</i>
+                                </a>
+                            </div>
+                            <div class="btn-group-2">
+                                <a class="btn btn-default relation-btn chart-tool" data-trigger="hover"
+                                   data-relation="generalization" data-placement="right" data-toggle="tooltip-chart"
+                                   title="继承">
+                                    <i class="icon-font icon-generalization">&nbsp;&nbsp;继承</i>
+                                </a>
+                                <a class="btn btn-default relation-btn chart-tool" data-trigger="hover"
+                                   data-relation="association" data-placement="right" data-toggle="tooltip-chart"
+                                   title="关联">
+                                    <i class="icon-font icon-association">&nbsp;&nbsp;关联</i>
+                                </a>
+                                <a class="btn btn-default relation-btn chart-tool" data-trigger="hover"
+                                   data-relation="composition" data-placement="right" data-toggle="tooltip-chart"
+                                   title="组合">
+                                    <i class="icon-font icon-composition">&nbsp;&nbsp;组合</i>
+                                </a>
+                            </div>
+                            <div class="btn-group-right">
+                                <a class="btn btn-default save-btn chart-tool" data-trigger="hover"
+                                   data-placement="right" data-toggle="tooltip-chart" title="保存">
+                                    <i class="icon-font icon-save">&nbsp;&nbsp;保存</i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="package-chart" id="package-chart" style="width:80%;">
+            <div class="paper" style="cursor:pointer;"></div>
+        </div>
+        <div class="class-property">
+            <div class="col-md-12">
+                <div class="portlet light bordered">
+                    <div class="portlet-body">
+                        <div class="table-toolbar">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <button class="btn sbold green add-property-btn">
+                                        <i class="fa fa-plus">&nbsp;&nbsp;新增类属性</i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <table class="table table-striped table-bordered table-hover property-table"></table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+    Launch demo modal
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+            </div>
+            <div class="modal-body">
+                ...
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary">保存</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="libs/jquery.min.js"></script>
+<script src="libs/bootstrap.min.js"></script>
+<script src="plugins/jointjs/lodash.min.js"></script>
+<script src="plugins/jointjs/backbone-min.js"></script>
+<script src="plugins/jointjs/joint.js"></script>
+<script src="assets/flow-designer/jointUml.js" type="text/javascript"></script>
+<script src="assets/flow-designer/flow-designer.js" type="text/javascript"></script>
+<script type="text/javascript">
+    $(function () {
+        flowDesigner.init("flow-designer", "package-chart");
+    });
+</script>
+</body>
+</html>
